@@ -1,6 +1,9 @@
 {
     "defaultSeverity": "error",
     "extends": [
-        "tslint:recommended"
-    ]
+        "tslint:latest"
+    ], 
+    "rules": {
+        "no-console": false
+    }
 }

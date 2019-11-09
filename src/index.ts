@@ -1,13 +1,10 @@
-import express from "express";
+import App from "./app";
+const port = process.env.PORT || 9001;
 
-const app = express();
-const port = 9001 || process.env.PORT;
+App.listen(port, (err: any) => {
+  if (err) {
+    return console.log(err);
+  }
 
-app.get("/", (req, res) => {
-    res.send("Hello Anubahv Saxena!");
-});
-
-app.listen(port, () => {
-    // tslint:disable-next-line:no-console
-    console.log(`server started at http://localhost:${port}`);
+  return console.log(`server is listening on ${port}`);
 });
