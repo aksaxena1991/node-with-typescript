@@ -56,13 +56,15 @@ class App {
               new passportGoogleOauth.OAuth2Strategy(
         {
             callbackURL: "/auth/google/redirect",
-            clientID: "36930921696-at5qk7qcl2cpij66iodkugl1rfd8p7mj.apps.googleusercontent.com ",
-            clientSecret: "nH-VV2CwVCrQsglBVy0qS6sm",
-
+            clientID: "186315077089-po6eek34jhpgncdptf8oh4a69j8p3bqn.apps.googleusercontent.com",
+            clientSecret: "fUwB6JG7f8yd8gHjtIC_DRo4",
     },
     (accessToken: any, refreshToken: any, profile: any, done: (arg0: any, arg1: any) => void) => {
-      console.log("printing profile data:::", profile);
-      done(null, profile);
+      process.nextTick(() => {
+        console.log("printing profile data:::", profile);
+        done(null, profile);
+      });
+
     },
   ),
 );
